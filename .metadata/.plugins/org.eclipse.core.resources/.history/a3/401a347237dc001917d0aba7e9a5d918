@@ -1,0 +1,10 @@
+package productos;
+
+public class Perecedero extends Producto {
+
+	public Perecedero() {
+		super(nombre,precio);
+		// TODO Auto-generated constructor stub
+	}
+
+}

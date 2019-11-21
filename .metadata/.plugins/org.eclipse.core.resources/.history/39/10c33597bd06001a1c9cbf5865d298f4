@@ -1,0 +1,58 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+
+public class Nombres {
+
+	public Nombres() {
+		// TODO Auto-generated constructor stub
+		
+		public static Collection<String> leerGuardar(String ruta) throws IOException {
+			  
+			BufferedReader abc = new BufferedReader(new FileReader(ruta));
+			List<String> data = new ArrayList<String>();
+			String s;
+			while((s=abc.readLine())!=null) {
+				
+			    data.add(s);
+			}
+			abc.close();       
+			
+			data.remove(0);
+			    
+			
+			Collection<Cuit2> persona = new ArrayList<Cuit2>();
+			for(String p : data) {
+				persona.add(new Cuit2(p));
+			}
+			
+			
+			
+		return persona;
+		
+}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String nombre = "/Users/ezequielgallardo/eclipse-workspace/archivos/src/misArchivos/cuit.csv";
+		
+		
+
+
+		
+		
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package productos;
+
+public class Perecedero {
+
+	public Perecedero() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

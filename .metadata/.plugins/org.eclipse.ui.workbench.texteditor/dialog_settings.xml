@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="caballero"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="soldado"/>
+			<item value="ArrayList"/>
+			<item value="int"/>
+			<item value="String"/>
+			<item value="Punto2D"/>
+			<item value="desponer"/>
+			<item value="poner"/>
+			<item value="apilar"/>
+			<item value="ponerr"/>
+			<item value="apila"/>
+			<item value="double"/>
+			<item value="Double"/>
+			<item value="Integer"/>
+			<item value="Empleados"/>
+			<item value="EmpleadoPermanente"/>
+		</list>
+		<list key="replacehistory">
+			<item value="caballero"/>
+			<item value="lancero"/>
+			<item value="arquero"/>
+			<item value="Colection"/>
+			<item value="double"/>
+			<item value="char"/>
+			<item value="Ubicacion"/>
+			<item value="sacar"/>
+			<item value="poner"/>
+			<item value="Double"/>
+			<item value="EmpleadosArray"/>
+			<item value="EmpleadoTemporal"/>
+			<item value="frase"/>
+			<item value="test"/>
+			<item value="img"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="0"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_WIDTH" value="1366"/>
+		<item key="DIALOG_HEIGHT" value="768"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+</section>

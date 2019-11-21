@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+
+public class Nombres {
+
+	public Nombres() {
+		// TODO Auto-generated constructor stub
+		
+		
+		
+		
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String nombre = "/Users/ezequielgallardo/eclipse-workspace/archivos/src/misArchivos/cuit.csv";
+		
+		
+
+
+		
+		
+
+	}
+
+}

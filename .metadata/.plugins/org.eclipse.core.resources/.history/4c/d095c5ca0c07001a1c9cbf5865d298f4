@@ -1,0 +1,51 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class FilaSupermercado {
+
+	public FilaSupermercado() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+  
+		 
+		 
+        
+        
+        Map<Integer, Integer> cola = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> colaB = new HashMap<Integer, Integer>();
+        		
+
+        cola.put(15, 1);
+        cola.put(10, 2);
+        cola.put(2, 3);
+        cola.put(1, 4);
+        
+        
+        Iterator<Map.Entry<Integer, Integer>> entries = cola.entrySet().iterator();
+        while (entries.hasNext()) {
+            Map.Entry<Integer, Integer> entry = entries.next();
+
+            if(entry.getKey() > 5) {
+            	System.out.println(entry.getKey());
+            }
+        
+        
+        }
+        
+       
+        
+
+        
+     
+
+    
+	}
+
+}

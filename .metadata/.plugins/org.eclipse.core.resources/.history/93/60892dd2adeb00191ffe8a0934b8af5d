@@ -1,0 +1,82 @@
+package pruebaParcial;
+
+public class Cuit {
+	
+	private int valor;
+
+	
+	
+	
+	
+
+	public Cuit() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	public int getValor() {
+		return valor;
+	}
+
+
+
+	public void setValor(int valor) {
+		this.valor = valor;
+	}
+
+
+
+	
+	
+	
+	public String toString() {
+		return "Cuit [valor=" + valor + "]";
+	}
+
+
+
+		
+
+
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		 int num = (int) 3333333332;  
+		    int[]digits = Integer.toString(num).chars().map(c -> c-'0').toArray();  
+		  //  for(int d : digits)
+		//        System.out.print(d + "//"); 
+		    
+		    System.out.println("");
+		    
+		    
+		   int serie [] = {5,4,3,2,7,6,5,3,2};
+		   
+		   //for(int d : serie)
+		    //    System.out.print(d);   
+		    
+		   int numero;
+		   int multiplicado = 0;
+		for(int i=1 ; i < digits.length ; i ++) {
+				
+				numero = digits[i];
+			
+				
+				multiplicado += numero * serie[i];
+				
+				
+					
+			
+		}
+		System.out.println(multiplicado);
+
+
+	}
+	
+	
+
+}

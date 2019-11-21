@@ -1,0 +1,10 @@
+cuil/cuit validos : 
+ tipo hombre ,  numero verificador correcto : 20-36596244-9
+ tipo empresa ,  numero verificador correcto : 30-71031609-7
+
+
+
+cuil/cuit que son invalidos 
+cuil es incorrecto los valores no estan dentro de los parametros 99-33997792-7
+cuil es incorrecto los valores no estan dentro de los parametros 99-22997792-7
+ tipo hombre  , el numero de cuil/cuit 20-36596244-6  es incorrecto  su cuil debe ser 20-36596244-9

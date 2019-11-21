@@ -1,0 +1,64 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+
+
+public class Nombres {
+	
+	
+
+
+
+	public Nombres() {
+		// TODO Auto-generated constructor stub
+		
+		
+	}
+		
+		
+		
+		
+		
+	
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		 Map<String, Integer> nombreMap = new HashMap<String, Integer>();		
+		String ruta = "/Users/ezequielgallardo/eclipse-workspace/archivos/src/misArchivos/400milNombres.in";
+		
+		
+		BufferedReader abc = new BufferedReader(new FileReader(ruta));
+		String s;
+		while((s=abc.readLine())!=null) {
+			
+			nombreMap.put(s, 0);
+		    
+		}
+		abc.close();  
+		
+		
+		
+			for(String valor : nombreMap.keySet()) {
+				System.out.println(nombreMap.get(valor));
+			}
+			
+		}
+
+		
+		
+
+
+		
+		
+
+	
+
+}

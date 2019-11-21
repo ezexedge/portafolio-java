@@ -1,0 +1,208 @@
+package pruebaParcial;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.io.Serializable;
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public class Cuit2 {
+	String dni;
+	
+
+	public Cuit2(String dni) {
+
+	this.setDni(dni);
+	}
+	
+	public int numeroAux1() {
+		int numeroSerie[] = {5,4,3,2,7,6,5,4,3,2};
+		String dni [] = this.dni.split("-");
+		String parte1 = dni[0];
+		String parte2 = dni[1];
+		String parte3 = dni[2];
+		
+		String dni2  = parte1 + parte2;
+		
+		String  dniArray[] = dni2.split("");
+		
+		int acum = 0;
+		
+		
+		
+		for(int i = 0 ; i< dniArray.length ; i++) {
+			
+			int parse = Integer.parseInt(dniArray[i],10);
+			
+			
+			acum+=parse * numeroSerie[i];
+			
+		}
+		
+		return acum;
+		
+			
+		
+	}
+	
+	
+	
+	public int numeroAux2() {
+		   return 11 - (this.numeroAux1() % 11);
+		  
+	}
+	
+	
+	
+	
+	public String numeroVerificador() {
+		
+		String dni [] = this.dni.split("-");
+		String parte1 = dni[0];
+		String parte2 = dni[1];
+		String parte3 = dni[2];
+		
+		
+		
+		
+		
+		int parseInicio = Integer.parseInt(parte1,10);
+		int parse = Integer.parseInt(parte3,10);
+		String resp="";
+		
+		
+		switch(parseInicio) {
+		
+		case 20:
+			
+			resp+=" tipo hombre";
+		break;
+		case 27:
+			resp+=" tipo mujer";
+		break;
+		case 24:
+			resp+=" tipo persona repetido";
+		break;
+		case 30:
+			resp+=" tipo empresa";
+		break;
+		case 34:
+			resp+=" tipo empresa repetido";
+		break;
+		default :
+			resp += "tipo incorrecto";
+		break;
+		
+		
+		}
+		
+		if(parse == this.numeroAux2()) {
+			resp += " ,  numero verificador correcto : " + parse + "  perteneciente al dni : " + parte2 ;
+		}
+		else{
+			
+			int verificadorCorrecto = this.numeroAux2();
+			
+			
+			resp += "  , el numero es incorrecto" + " perteneciente al dni : " + parte2 + " el numero verificador debe ser " + verificadorCorrecto ;
+		}
+		
+		
+		return resp;
+		
+		
+		
+	}
+	
+
+	public String getDni() {
+		return dni;
+	}
+
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	
+
+	
+	
+	
+	
+
+
+	@Override
+	public String toString() {
+		return "Cuit2 [dni=" + dni + "]";
+	}
+	
+	
+	
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		
+		Cuit2 p1 = new Cuit2("20-33997712-6");
+		System.out.println(p1.numeroVerificador());
+		
+		
+	
+		Cuit2 p2 = new Cuit2("99-33997792-7");
+		System.out.println(p2.numeroVerificador());
+		Cuit2 p3 = new Cuit2("99-22997792-7");
+		
+		
+		
+		
+		//persona.add(p1);
+		//persona.add(p2);
+		//persona.add(p3);
+		
+		
+		
+		
+		String ruta = "/Users/ezequielgallardo/eclipse-workspace/archivos/src/misArchivos/cuit.csv";
+
+	  
+		BufferedReader abc = new BufferedReader(new FileReader(ruta));
+		List<String> data = new ArrayList<String>();
+		String s;
+		while((s=abc.readLine())!=null) {
+		    data.add(s);
+		    System.out.println(s);
+		}
+		abc.close();       
+		    
+		System.out.println("///");
+		
+		ArrayList<Cuit2> persona = new ArrayList<Cuit2>();
+		for(String p : data) {
+			persona.add(new Cuit2(p));
+		}
+		
+		for(Cuit2 cuit :persona) {
+			System.out.println(cuit.numeroVerificador());
+		}
+	
+		
+		String dni = "20-111111-1";
+		String dniArray[] = dni.split("");
+		ArrayList<String> arreglo = new ArrayList<String>(Arrays.asList(dniArray));
+		arreglo.remove(0);
+		System.out.println(arreglo);
+	
+	}
+
+}

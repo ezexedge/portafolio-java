@@ -1,0 +1,81 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+
+
+public class Nombres {
+	
+	
+	private static Map<String, Integer> nombreMap = new HashMap<String, Integer>();
+
+
+	public Nombres() {
+		// TODO Auto-generated constructor stub
+		
+		
+		public static void leerGuardar(String ruta) throws IOException {
+			  
+			BufferedReader abc = new BufferedReader(new FileReader(ruta));
+			List<String> data = new ArrayList<String>();
+			String s;
+			while((s=abc.readLine())!=null) {
+				
+			    data.add(s);
+			}
+			abc.close();       
+			
+			data.remove(0);
+			    
+			
+			
+			
+			
+			
+		
+}
+		
+		
+		
+		
+		
+	}
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		String ruta = "/Users/ezequielgallardo/eclipse-workspace/archivos/src/misArchivos/cuit.csv";
+		
+		
+		BufferedReader abc = new BufferedReader(new FileReader(ruta));
+		String s;
+		while((s=abc.readLine())!=null) {
+			
+			nombreMap.put(s, 0);
+		    
+		}
+		abc.close();  
+		
+		
+		
+			nombreMap.forEach((k,v) -> System.out.println("Key: " + k + ": Value: " + v));
+			
+		}
+
+		
+		
+
+
+		
+		
+
+	}
+
+}

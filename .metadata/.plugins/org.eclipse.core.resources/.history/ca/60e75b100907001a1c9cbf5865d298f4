@@ -1,0 +1,44 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class FilaSupermercado {
+
+	public FilaSupermercado() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+  
+		 
+		 
+        
+        
+        Map<Integer, Integer> cola = new HashMap<Integer, Integer>();
+        		
+
+        cola.put(5, 1);
+        cola.put(10, 2);
+        cola.put(2, 3);
+        cola.put(1, 4);
+        
+        
+        for(Integer iterable : cola.keySet()) {
+
+        	if(iterable > 5) {
+        		cola.remove(iterable);
+        	}
+        	
+        }
+
+        
+     
+        System.out.println(cola);
+
+    
+	}
+
+}

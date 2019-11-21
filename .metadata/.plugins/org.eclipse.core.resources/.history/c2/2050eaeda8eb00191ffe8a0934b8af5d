@@ -1,0 +1,170 @@
+package pruebaParcial;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Cuit2 {
+	String dni;
+	
+
+	public Cuit2(String dni) {
+
+	this.setDni(dni);
+	}
+	
+	public int numeroAux1() {
+		int numeroSerie[] = {5,4,3,2,7,6,5,4,3,2};
+		String dni [] = this.dni.split("-");
+		String parte1 = dni[0];
+		String parte2 = dni[1];
+		String parte3 = dni[2];
+		
+		String dni2  = parte1 + parte2;
+		
+		String  dniArray[] = dni2.split("");
+		
+		int acum = 0;
+		
+		
+		
+		for(int i = 0 ; i< dniArray.length ; i++) {
+			
+			int parse = Integer.parseInt(dniArray[i],10);
+			
+			
+			acum+=parse * numeroSerie[i];
+			
+		}
+		
+		return acum;
+		
+			
+		
+	}
+	
+	
+	
+	public int numeroAux2() {
+		   return 11 - (this.numeroAux1() % 11);
+		  
+	}
+	
+	
+	
+	
+	public String numeroVerificador() {
+		
+		String dni [] = this.dni.split("-");
+		String parte1 = dni[0];
+		String parte3 = dni[2];
+		
+		
+		
+		
+		
+		int parseInicio = Integer.parseInt(parte1,10);
+		int parse = Integer.parseInt(parte3,10);
+		String resp="";
+		
+		
+		switch(parseInicio) {
+		
+		case 20:
+			
+			resp+=" tipo hombre";
+		break;
+		case 27:
+			resp+=" tipo mujer";
+		break;
+		case 24:
+			resp+=" tipo persona repetido";
+		break;
+		case 30:
+			resp+=" tipo empresa";
+		break;
+		case 34:
+			resp+=" tipo empresa repetido";
+		break;
+		default :
+			resp += "tipo incorrecto";
+		break;
+		
+		
+		}
+		
+		if(parse == this.numeroAux2()) {
+			resp += " ,  numero verificador correcto : " + parse;
+		}
+		else{
+			resp += "  , el numero es incorrecto";
+		}
+		
+		
+		return resp;
+		
+		
+		
+	}
+	
+
+	public String getDni() {
+		return dni;
+	}
+
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	
+	
+	
+	
+
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		
+		Cuit2 p1 = new Cuit2("20-33997792-6");
+		System.out.println(p1.numeroVerificador());
+		
+		
+	
+		Cuit2 p2 = new Cuit2("99-33997792-7");
+		System.out.println(p2.numeroVerificador());
+		
+		
+		Cuit2 personas[] = new  Cuit2[3];
+		
+		personas[1] = p1;
+		personas[2] = p2;
+		
+		
+		for(int i = 0;  i <  personas.length ; i ++) {
+			
+			Cuit2 personaCuit = personas[i];
+			
+			System.out.println(personaCuit.getDni());
+			
+		}
+		
+		
+		String new_space = " ";
+		String ruta = "/Users/ezequielgallardo/eclipse-workspace/archivos/src/misArchivos/cuit.txt";
+		 BufferedWriter bw =  new BufferedWriter(new FileWriter(ruta));
+	
+		 bw.write("hola");
+		 bw.close();
+		 
+		
+	
+		
+
+	
+	}
+
+}
